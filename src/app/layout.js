@@ -1,5 +1,5 @@
-import Header from "./components/header";
-import Footer from "./components/footer";
+import Header from "../app/components/Header";
+import Footer from "../app/components/Footer";
 
 export const metadata = {
   title: "Twitchlolja.com",
@@ -10,9 +10,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header>
+        <Header />
         {children}
-        </Header>
+        <Footer />
       </body>
     </html>
   );
