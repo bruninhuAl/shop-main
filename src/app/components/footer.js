@@ -3,7 +3,7 @@ import style from "../styles/footer.module.css"
 
 export default function Footer(){
     return(
-        <footer className={styles.rodape}>   
+        <footer className={style.rodape}>   
         <ul>
             <li>
                 <a href="https://instagram.com">

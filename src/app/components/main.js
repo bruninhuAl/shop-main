@@ -1,4 +1,4 @@
-import styles from "../styles/main.module.css"
+import style from "../styles/main.module.css"
 
 export default async function Main() {
   const response = await fetch("https://fakestoreapi.com/products", {
@@ -7,11 +7,11 @@ export default async function Main() {
   const produtos = await response.json();
   return (
     <main>
-      <div className={styles.grid}>
+      <div className={style.grid}>
         {produtos.map((produto) => (
-          <div key={produto.id} className={styles.cereja1}>
+          <div key={produto.id} className={style.cereja1}>
             <h3>{produto.title}</h3>
-            <img src={produto.image} alt={produto.title} className={styles.imagem} />
+            <img src={produto.image} alt={produto.title} className={style.imagem} />
             <p>Price: R${produto.price}</p>
             <p>{produto.description}</p>
             <p>Category: {produto.category}</p>

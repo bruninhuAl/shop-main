@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./styles/page.module.css"
+import style from "./styles/page.module.css"
 import Main from "./components/Main"
 
 
