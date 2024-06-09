@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background-color: #ffe0e0;
+    background-color: #663399;
   }
   
   .logo {
@@ -37,7 +37,7 @@
   .actions button {
     padding: 0.9rem 1rem;
     border: none;
-    background-color: #700f27;
-    color: rgb(245, 207, 207);
+    background-color: #9932CC;
+    color: rgb(255, 255, 255);
     font-size: 1rem;
   }

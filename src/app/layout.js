@@ -2,7 +2,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 
 export const metadata = {
-  title: "Meu Shop.com",
+  title: "Disk.com",
   description: "E-commerce",
 };
 

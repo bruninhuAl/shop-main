@@ -2,7 +2,9 @@
 const nextConfig = {
     images:{
         domains:[
-            "fakestoreapi.com"
+            "fakestoreapi.com",
+            "/public/25231-removebg-preview.png"
+
         ]
     }
 };
