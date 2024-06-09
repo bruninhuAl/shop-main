@@ -6,8 +6,8 @@ export default function Header() {
     return (
       <header className={style.header}>
         <div className={style.logo}>
-          <Image height={80} width={80} src="/public/25231-removebg-preview.png" alt="Logo"/>
-          <h2>Disk</h2>
+          <Image height={80} width={80} src="https://pngfre.com/wp-content/uploads/twitch-logo-png-image-from-pngfre-3.png" alt="Logo"/>
+          <h2>Twitch Lolja</h2>
         </div>
         <nav className={style.navbar}>
         </nav>
