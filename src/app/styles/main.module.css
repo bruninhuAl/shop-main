@@ -10,7 +10,7 @@
     gap: 17px;
   }
   
-  .cereja1 {
+  .pprt {
     flex: 1 1 calc(33.333% - 16px); 
     box-sizing: border-box;
     border: 1px solid #ccc;

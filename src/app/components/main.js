@@ -9,7 +9,7 @@ export default async function Main() {
     <main>
       <div className={style.grid}>
         {produtos.map((produto) => (
-          <div key={produto.id} className={style.cereja1}>
+          <div key={produto.id} className={style.pprt}>
             <h3>{produto.title}</h3>
             <img src={produto.image} alt={produto.title} className={style.imagem} />
             <p>Price: R${produto.price}</p>
