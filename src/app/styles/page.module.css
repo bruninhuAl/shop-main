@@ -1,19 +1,16 @@
-.corpo{
+.main{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 50px;
-     background-color: rgb(139, 252, 254);
 }
 
 .card{
     display: flex;
     width: 400px;
-    height: auto;
+    height: 400px;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: rgb(188, 227, 233);
-    border-radius: 10%;
 }

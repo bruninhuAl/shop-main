@@ -1,19 +1,24 @@
-import Image from "next/image"
-import style from "./styles/page.module.css"
-export default async function Home() {
-  const resposta = await fetch("https://fakestoreapi.com/products/")
-  const data = await resposta.json();
+import styles from "../styles/main.module.css"
+
+export default async function Main() {
+  const response = await fetch("https://fakestoreapi.com/products", {
+    cache: "no-cache"
+  });
+  const produtos = await response.json();
   return (
-    <main className={style.corpo}>
-      {data.map((products) =>
-        <div className={style.card} key={products.id}>
-          <h1>{products.title.slice(0,16)+"..."}</h1>
-          <Image width={300} height={300} src={products.image} />
-          <h3 className={style.preco}>R$: {products.price}</h3>
-          <p>{products.description.slice(0,1000)+"..."}</p>
-          <p>{products.category}</p>
-        </div>
-      )}
+    <main>
+      <div className={styles.grid}>
+        {produtos.map((produto) => (
+          <div key={produto.id} className={styles.cereja1}>
+            <h3>{produto.title}</h3>
+            <img src={produto.image} alt={produto.title} className={styles.imagem} />
+            <p>Price: R${produto.price}</p>
+            <p>{produto.description}</p>
+            <p>Category: {produto.category}</p>
+            <p>Rating: {produto.rating.count}</p>
+          </div>
+        ))}
+      </div>
     </main>
   );
 }
