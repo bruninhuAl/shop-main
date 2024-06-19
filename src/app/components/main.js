@@ -55,8 +55,8 @@ export default function Main() {
           <div>
               <button onClick={ orderAz }> Az</button>
               <button onClick={ orderZa }> Za</button>
-              <button onClick={ orderMenorMaior }> -+</button>
-              <button onClick={ orderMaiorMenor }> +-</button>
+              <button onClick={ orderMenorMaior }> - +</button>
+              <button onClick={ orderMaiorMenor }> + -</button>
           </div>
       </div>  
       <main className={style.grid}>
