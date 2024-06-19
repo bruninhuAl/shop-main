@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import style from "../styles/main.module.css"
+import Spinner from "./spinner";
 
 export default function Main() {
 
@@ -42,6 +43,10 @@ export default function Main() {
       
       teste = teste.reverse();
       setProducts(teste);
+    }
+
+    if( listProducts[0] == null){
+      return <Spinner/>
     }
 
   return (
