@@ -1,14 +1,61 @@
+'use client'
+import { useEffect, useState } from "react";
 import style from "../styles/main.module.css"
 
-export default async function Main() {
-  const response = await fetch("https://fakestoreapi.com/products", {
-    cache: "no-cache"
-  });
-  const produtos = await response.json();
+export default function Main() {
+
+  const [listProducts, setProducts] = useState([]);
+
+  useEffect( ()=> {   
+    const getProduct = async() => {
+      const response = await fetch("https://fakestoreapi.com/products")
+      const data = await response.json();
+      setProducts(data);
+    }
+    getProduct();
+  },[]);
+
+    const orderAz = () => {
+      const listAux = [...listProducts].sort((a,b) =>
+       a.title.localeCompare(b.title) );
+      setProducts(listAux);
+    } 
+
+    const orderZa = () => {
+      let listAux = [...listProducts].sort((a,b) =>
+       a.title.localeCompare(b.title) );
+
+       listAux = listAux.reverse();
+       setProducts(listAux);
+    }
+
+    const orderMenorMaior = () => {
+      const teste = [...listProducts].sort((a, b) => 
+      a.price - b.price);
+      
+      setProducts(teste);
+    }
+
+    const orderMaiorMenor = () => {
+      let teste = [...listProducts].sort((a, b) => 
+      a.price - b.price);
+      
+      teste = teste.reverse();
+      setProducts(teste);
+    }
+
   return (
-    <main>
-      <div className={style.grid}>
-        {produtos.map((produto) => (
+    <>
+      <div >
+          <div>
+              <button onClick={ orderAz }> Az</button>
+              <button onClick={ orderZa }> Za</button>
+              <button onClick={ orderMenorMaior }> -+</button>
+              <button onClick={ orderMaiorMenor }> +-</button>
+          </div>
+      </div>  
+      <main className={style.grid}>
+        {listProducts.map((produto) => (
           <div key={produto.id} className={style.pprt}>
             <h3>{produto.title}</h3>
             <img src={produto.image} alt={produto.title} className={style.imagem} />
@@ -18,7 +65,7 @@ export default async function Main() {
             <p>Rating: {produto.rating.count}</p>
           </div>
         ))}
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
