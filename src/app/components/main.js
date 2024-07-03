@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import style from "../styles/main.module.css";
 import Spinner from "./spinner";
 import ErrorFetch from "./ErrorFetch";
+import Link from "next/link";
 
 export default function Main() {
 
@@ -61,7 +62,7 @@ export default function Main() {
         listProducts(listComplete);
         return
       }
-      const newList = listProducts.filter(() =>
+      const newList = listProducts.filter((produto) =>
         produto.title.topUpperCase().Spinnertrim().includes(textSearch.topUpperCase())
       );
       listComplete(newList);
@@ -97,6 +98,9 @@ export default function Main() {
             <p>{produto.description}</p>
             <p>Category: {produto.category}</p>
             <p>Rating: {produto.rating.count}</p>
+            <Link href={"/product/" + produto.id}>
+            <button>Ver Mais</button>
+            </Link>
           </div>
         ))}
       </main>

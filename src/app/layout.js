@@ -2,7 +2,7 @@ import Header from "../app/components/Header";
 import Footer from "../app/components/Footer";
 
 export const metadata = {
-  title: "Twitchlolja.com",
+  title: "Twitch Lolja",
   description: "E-commerce",
 };
 
